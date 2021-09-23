@@ -1,10 +1,19 @@
-$("#introVideo").trigger("play");
+// document.getElementById("introVideo").play();
+
+// $("#introVideo").click(function () {
+//   if ($("#introVideo").get(0).paused) {
+//     $("#introVideo").trigger("play");
+//   } else {
+//     $("#introVideo").trigger("pause");
+//   }
+// });
+
+$("#introVideo").prop("muted", true);
+
 $("#introVideo").click(function () {
-  if ($("#introVideo").get(0).paused) {
-    $("#introVideo").trigger("play");
-    $(".introVideo").fadeOut(500);
+  if ($("#introVideo").prop("muted")) {
+    $("#introVideo").prop("muted", false);
   } else {
-    $("#introVideo").trigger("pause");
-    $(".introVideo").fadeIn(500);
+    $("#introVideo").prop("muted", true);
   }
 });
